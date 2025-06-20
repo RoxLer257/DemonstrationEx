@@ -19,20 +19,27 @@ namespace test.Pages
         public EditProduct(int? productId = null)
         {
             InitializeComponent();
+            this.Loaded += EditProduct_Loaded;
             LoadProductTypes();
             if (productId != null)
             {
                 isEditMode = true;
                 editingProduct = Helper.ConnectDB.Products.FirstOrDefault(p => p.ID_Product == productId);
-                Helper.PageName.Text = "РЕДАКТИРОВАНИЕ ПРОДУКТА";
                 FillFields(editingProduct);
             }
             else
             {
                 isEditMode = false;
-                Helper.PageName.Text = "ДОБАВЛЕНИЕ ПРОДУКТА";
                 editingProduct = new Products();
             }
+        }
+
+        private void EditProduct_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (isEditMode)
+                Helper.PageName.Text = "РЕДАКТИРОВАНИЕ ПРОДУКТА";
+            else
+                Helper.PageName.Text = "ДОБАВЛЕНИЕ ПРОДУКТА";
         }
 
         private void LoadProductTypes()

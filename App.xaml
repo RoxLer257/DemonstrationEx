@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:test"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Gabriola"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Gabriola"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Gabriola"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="Gabriola"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"
-        Title="Продукция компании" Height="720" Width="1280"
+        Title="Наш декор" Height="720" Width="1280"
         Icon="/Images/Наш декор.ico">
 
     <Grid>
@@ -17,7 +17,7 @@
         <Image Source="Images/Наш декор.png" HorizontalAlignment="Left" Margin="10"/>
 
         <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="24" FontFamily="Constantia" x:Name="pageName"/>
+                   FontSize="24" FontFamily="Gabriola" x:Name="pageName"/>
         
         <Frame Grid.Row="1" Name="FrmMain" NavigationUIVisibility="Hidden"/>
     </Grid>

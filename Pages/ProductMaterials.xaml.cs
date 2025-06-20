@@ -24,7 +24,13 @@ namespace test.Pages
         public ProductMaterials(int productId)
         {
             InitializeComponent();
+            this.Loaded += ProductMaterials_Loaded;
             LoadMaterials(productId);
+        }
+
+        private void ProductMaterials_Loaded(object sender, RoutedEventArgs e)
+        {
+            Helper.PageName.Text = "МАТЕРИАЛЫ ПРОДУКТА";
         }
 
         private void LoadMaterials(int productId)

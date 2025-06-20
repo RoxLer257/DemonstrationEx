@@ -37,9 +37,9 @@
                             </Grid.RowDefinitions>
 
                             <TextBlock Grid.Column="0" Grid.Row="0" FontSize="24" Margin="15 5 0 0">
-                                <Run Text="{Binding NameProduct, Mode=OneWay}"/>
-                                <Run Text=" | "/>
                                 <Run Text="{Binding Product_type.TypeProduct, Mode=OneWay}"/>
+                                <Run Text=" | "/>
+                                <Run Text="{Binding NameProduct, Mode=OneWay}"/>
                             </TextBlock>
                             <TextBlock Grid.Column="0" Grid.Row="1" FontSize="18" Margin="15 0 0 0">
                                 <Run Text="Артикул "/>

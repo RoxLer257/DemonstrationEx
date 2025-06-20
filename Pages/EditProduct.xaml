@@ -28,20 +28,20 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Артикул:" Grid.Row="0" Grid.Column="0" Margin="15,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbArticul" Grid.Row="0" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="16"/>
+        <TextBlock Text="Артикул:" Grid.Row="0" Grid.Column="0" FontSize="18" Margin="15,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbArticul" Grid.Row="0" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="18"/>
 
-        <TextBlock Text="Тип продукта:" Grid.Row="2" Grid.Column="0" Margin="15,0,0,0" VerticalAlignment="Center"/>
-        <ComboBox x:Name="cbProductType" Grid.Row="2" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="16"/>
+        <TextBlock Text="Тип продукта:" Grid.Row="2" Grid.Column="0" FontSize="18" Margin="15,0,0,0" VerticalAlignment="Center"/>
+        <ComboBox x:Name="cbProductType" Grid.Row="2" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="18"/>
 
-        <TextBlock Text="Наименование:" Grid.Row="4" Grid.Column="0" Margin="15,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbName" Grid.Row="4" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="16"/>
+        <TextBlock Text="Наименование:" Grid.Row="4" Grid.Column="0" FontSize="18" Margin="15,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbName" Grid.Row="4" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="18"/>
 
-        <TextBlock Text="Мин. стоимость для партнера:" Grid.Row="6" Grid.Column="0" Margin="15,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbMinCost" Grid.Row="6" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="16"/>
+        <TextBlock Text="Мин. стоимость для партнера:" Grid.Row="6" FontSize="18" Grid.Column="0" Margin="15,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbMinCost" Grid.Row="6" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="18"/>
 
-        <TextBlock Text="Ширина рулона (м):" Grid.Row="8" Grid.Column="0" Margin="15,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="tbRollWidth" Grid.Row="8" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="16"/>
+        <TextBlock Text="Ширина рулона (м):" Grid.Row="8" Grid.Column="0" FontSize="18" Margin="15,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbRollWidth" Grid.Row="8" Grid.Column="2" Margin="0,0,0,0" Height="32" FontSize="18"/>
 
         <StackPanel Grid.Row="10" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,20,20">
             <Button x:Name="btnSave" Content="Сохранить" Width="120" Height="36" 

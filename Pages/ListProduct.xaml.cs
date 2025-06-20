@@ -23,7 +23,6 @@ namespace test.Pages
     {
         public ListProduct()
         {
-            Helper.PageName.Text = "СПИСОК ПРОДУКТОВ";
             InitializeComponent();
             this.Loaded += ListProduct_Loaded;
             LtvListMaterial.SelectionChanged += LtvListMaterial_SelectionChanged;
@@ -31,6 +30,7 @@ namespace test.Pages
 
         private void ListProduct_Loaded(object sender, RoutedEventArgs e)
         {
+            Helper.PageName.Text = "СПИСОК ПРОДУКЦИИ";
             LoadMaterialRequirements();
         }
 

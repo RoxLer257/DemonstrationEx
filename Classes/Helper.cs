@@ -13,16 +13,6 @@ namespace test.Classes
         public static Frame frmObj;
         public static DemEntities ConnectDB = new DemEntities();
 
-        /// <summary>
-        /// Расчет количества закупаемого материала для производства продукции
-        /// </summary>
-        /// <param name="productTypeId">ID типа продукции</param>
-        /// <param name="materialTypeId">ID типа материала</param>
-        /// <param name="productCount">Количество продукции (целое)</param>
-        /// <param name="param1">Параметр продукции 1 (вещественный, >0)</param>
-        /// <param name="param2">Параметр продукции 2 (вещественный, >0)</param>
-        /// <param name="materialOnStock">Количество материала на складе (вещественное, >=0)</param>
-        /// <returns>Целое количество закупаемого материала или -1 при ошибке</returns>
         public static int CalculateMaterialPurchase(int productTypeId, int materialTypeId, int productCount, double param1, double param2, double materialOnStock)
         {
             if (productTypeId <= 0 || materialTypeId <= 0 || productCount <= 0 || param1 <= 0 || param2 <= 0 || materialOnStock < 0)
