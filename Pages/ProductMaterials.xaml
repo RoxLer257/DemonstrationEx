@@ -1,0 +1,49 @@
+﻿<Page x:Class="test.Pages.ProductMaterials"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:test.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="ProductMaterials">
+
+    <Grid Margin="20">
+        <TextBlock Text="Материалы продукта" FontSize="28" FontWeight="Bold" Margin="0,0,0,20"/>
+        <ListView x:Name="lvMaterials" Margin="0,50,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Наименование материала" DisplayMemberBinding="{Binding NameMaterial}" Width="400"/>
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding NuzhnoQuantityMaterial}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Vertical" Margin="10,20,0,10" VerticalAlignment="Bottom">
+            <TextBlock Text="Расчет закупаемого материала" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Тип продукции (ID):" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cbProductType" DisplayMemberPath="TypeProduct"
+          SelectedValuePath="ID_ProductType" Width="60" Margin="0 0 20 0"/>
+                <TextBlock Text="Тип материала (ID):" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cbMaterialType" DisplayMemberPath="TypeMaterial"
+          SelectedValuePath="ID_TypeMaterial" Width="60" Margin="0 0 20 0"/>
+                <TextBlock Text="Кол-во продукции:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="tbProductCount" Width="60" Margin="0,0,20,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Параметр 1:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="tbParam1" Width="60" Margin="0,0,20,0"/>
+                <TextBlock Text="Параметр 2:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="tbParam2" Width="60" Margin="0,0,20,0"/>
+                <TextBlock Text="На складе:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="tbMaterialOnStock" Width="60"/>
+            </StackPanel>
+            <Button Content="Рассчитать закупку" Width="200" Height="36" FontSize="16" 
+                    Background="#2D6033" Foreground="White" Click="BtnCalc_Click"/>
+            <TextBlock x:Name="tbCalcResult" FontSize="18" FontWeight="Bold" Margin="0,10,0,0"/>
+        </StackPanel>
+        <Button Content="Назад" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                Background="#2D6033" FontSize="24"
+                Width="120" Height="36" Margin="0,0,15,10" Click="BtnBack_Click"/>
+    </Grid>
+</Page>
