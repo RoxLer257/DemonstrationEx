@@ -15,12 +15,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <ListView Grid.Row="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" x:Name="LtvListMaterial"
-                  HorizontalAlignment="Stretch" Width="{Binding Width, ElementName=grid}" MouseDoubleClick="LtvListMaterial_MouseDoubleClick">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                </Style>
-            </ListView.ItemContainerStyle>
+                  HorizontalAlignment="Stretch" Width="{Binding Width, ElementName=grid}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Margin="10 10 10 0" BorderThickness="1" BorderBrush="Black" CornerRadius="6" Background="White" HorizontalAlignment="Stretch" MinHeight="160">
@@ -37,22 +32,22 @@
                             </Grid.RowDefinitions>
 
                             <TextBlock Grid.Column="0" Grid.Row="0" FontSize="24" Margin="15 5 0 0">
-                                <Run Text="{Binding Product_type.TypeProduct, Mode=OneWay}"/>
+                                <Run Text="{Binding Product.Product_type.TypeProduct}"/>
                                 <Run Text=" | "/>
-                                <Run Text="{Binding NameProduct, Mode=OneWay}"/>
+                                <Run Text="{Binding Product.NameProduct}"/>
                             </TextBlock>
                             <TextBlock Grid.Column="0" Grid.Row="1" FontSize="18" Margin="15 0 0 0">
                                 <Run Text="Артикул "/>
-                                <Run Text="{Binding Articul, Mode=OneWay}"/>
+                                <Run Text="{Binding Product.Articul}"/>
                             </TextBlock>
                             <TextBlock Grid.Column="0" Grid.Row="2" FontSize="18" Margin="15 0 0 0">
                                 <Run Text="Минимальная стоимость для партнера: "/>
-                                <Run Text="{Binding MinCostForPartner, Mode=OneWay}"/>
+                                <Run Text="{Binding Product.MinCostForPartner}"/>
                                 <Run Text=" (р)"/>
                             </TextBlock>
                             <TextBlock Grid.Column="0" Grid.Row="3" FontSize="18" Margin="15 0 0 0">
                                 <Run Text="Ширина: "/>
-                                <Run Text="{Binding RollWidthMetr, Mode=OneWay}"/>
+                                <Run Text="{Binding Product.RollWidthMetr}"/>
                                 <Run Text=" (м)"/>
                             </TextBlock>
 

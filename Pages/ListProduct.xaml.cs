@@ -31,11 +31,7 @@ namespace test.Pages
         private void ListProduct_Loaded(object sender, RoutedEventArgs e)
         {
             Helper.PageName.Text = "СПИСОК ПРОДУКЦИИ";
-            LoadMaterialRequirements();
-        }
-
-        private void LoadMaterialRequirements()
-        {
+            
             // Загружаем все продукты из базы данных
             var products = Helper.ConnectDB.Products.ToList();
             // Для каждого продукта рассчитываем стоимость
@@ -65,26 +61,12 @@ namespace test.Pages
         {
             public Products Product { get; set; }
             public double TotalMaterialCost { get; set; }
-            // Проксируем свойства для биндинга
-            public string NameProduct => Product.NameProduct;
-            public string Articul => Product.Articul?.ToString();
-            public string MinCostForPartner => Product.MinCostForPartner?.ToString();
-            public string RollWidthMetr => Product.RollWidthMetr?.ToString();
-            public Product_type Product_type => Product.Product_type;
             public int ID_Product => Product.ID_Product;
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new EditProduct(null));
-        }
-
-        private void LtvListMaterial_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (LtvListMaterial.SelectedItem is ProductWithCost selectedProduct)
-            {
-                NavigationService.Navigate(new EditProduct(selectedProduct.ID_Product));
-            }
         }
 
         private void LtvListMaterial_SelectionChanged(object sender, SelectionChangedEventArgs e)

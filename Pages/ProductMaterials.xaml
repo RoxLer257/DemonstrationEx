@@ -9,7 +9,6 @@
       Title="ProductMaterials">
 
     <Grid Margin="20">
-        <TextBlock Text="Материалы продукта" FontSize="28" FontWeight="Bold" Margin="0,0,0,20"/>
         <ListView x:Name="lvMaterials" Margin="0,50,0,0" FontSize="18">
             <ListView.View>
                 <GridView>
@@ -23,12 +22,12 @@
             <StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
                 <TextBlock Text="Тип продукции (ID):" VerticalAlignment="Center" FontSize="18" Margin="0,0,10,0"/>
                 <ComboBox x:Name="cbProductType" DisplayMemberPath="TypeProduct" FontSize="18"
-          SelectedValuePath="ID_ProductType" Width="60" Margin="0 0 20 0"/>
+          SelectedValuePath="ID_ProductType" Width="100" Margin="0 0 20 0"/>
                 <TextBlock Text="Тип материала (ID):" VerticalAlignment="Center"
                            FontSize="18" Margin="0,0,10,0"/>
                 <ComboBox x:Name="cbMaterialType" DisplayMemberPath="TypeMaterial"
                           FontSize="18"
-          SelectedValuePath="ID_TypeMaterial" Width="60" Margin="0 0 20 0"/>
+          SelectedValuePath="ID_TypeMaterial" Width="100" Margin="0 0 20 0"/>
                 <TextBlock Text="Кол-во продукции:" VerticalAlignment="Center" 
                            FontSize="18" Margin="0,0,10,0"/>
                 <TextBox x:Name="tbProductCount" Width="60" Margin="0,0,20,0"

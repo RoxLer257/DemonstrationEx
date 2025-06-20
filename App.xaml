@@ -16,5 +16,8 @@
         <Style TargetType="ComboBox">
             <Setter Property="FontFamily" Value="Gabriola"/>
         </Style>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
     </Application.Resources>
 </Application>

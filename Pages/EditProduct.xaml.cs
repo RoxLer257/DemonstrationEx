@@ -77,30 +77,12 @@ namespace test.Pages
             if (!ValidateFieldsSimple())
                 return;
 
-            double articul, minCost, rollWidth;
-            int typeId;
+            // Просто преобразуем значения без проверок
+            double articul = double.Parse(tbArticul.Text.Replace(',', '.'), System.Globalization.CultureInfo.InvariantCulture);
+            int typeId = int.Parse(cbProductType.SelectedValue.ToString());
             string name = tbName.Text.Trim();
-
-            if (!double.TryParse(tbArticul.Text.Replace(',', '.'), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out articul))
-            {
-                MessageBox.Show("Артикул должен быть числом.");
-                return;
-            }
-            if (!int.TryParse(cbProductType.SelectedValue.ToString(), out typeId))
-            {
-                MessageBox.Show("Тип продукта должен быть выбран.");
-                return;
-            }
-            if (!double.TryParse(tbMinCost.Text.Replace(',', '.'), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out minCost))
-            {
-                MessageBox.Show("Минимальная стоимость должна быть числом.");
-                return;
-            }
-            if (!double.TryParse(tbRollWidth.Text.Replace(',', '.'), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out rollWidth))
-            {
-                MessageBox.Show("Ширина рулона должна быть числом.");
-                return;
-            }
+            double minCost = double.Parse(tbMinCost.Text.Replace(',', '.'), System.Globalization.CultureInfo.InvariantCulture);
+            double rollWidth = double.Parse(tbRollWidth.Text.Replace(',', '.'), System.Globalization.CultureInfo.InvariantCulture);
 
             editingProduct.Articul = articul;
             editingProduct.IDTypeProduct = typeId;
@@ -113,20 +95,9 @@ namespace test.Pages
                 Helper.ConnectDB.Products.Add(editingProduct);
             }
 
-            try
-            {
-                Helper.ConnectDB.SaveChanges();
-                MessageBox.Show("Продукт успешно сохранен.");
-                if (Helper.frmObj != null && Helper.frmObj.Content is ListProduct listPage)
-                {
-                    listPage.LtvListMaterial.SelectedItem = null;
-                }
-                NavigationService.GoBack();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка при сохранении: {ex.Message}\n{ex.InnerException?.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            Helper.ConnectDB.SaveChanges();
+            MessageBox.Show("Продукт успешно сохранен.");
+            NavigationService.GoBack();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
